@@ -15,3 +15,9 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
+
+//Route with URL Parameters
+app.get('/hello/:name/:surname', (req, res) => {
+    res.send('Hello ' + req.params.name + " " + req.params.surname);
+});
+
