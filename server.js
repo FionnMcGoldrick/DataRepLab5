@@ -66,3 +66,14 @@ app.get('/name', (req, res) => {
     const lastname = req.query.lastname;
     res.send(`Hello ${firstname} ${lastname}`);
 });
+
+//Body Parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Handle Post form 
+app.post('/name', (req, res) => {
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
+});
