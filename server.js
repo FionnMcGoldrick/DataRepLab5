@@ -47,5 +47,5 @@ app.get('/api/movies', (req, res) => {
         }
     ];
     //Status code 
-    res.status(201).json({ movies });
+    res.status(200).json({ myMovies: movies });
 });
