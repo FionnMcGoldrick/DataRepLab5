@@ -49,3 +49,10 @@ app.get('/api/movies', (req, res) => {
     //Status code 
     res.status(200).json({ myMovies: movies });
 });
+
+//Path for HTML index page
+const path = require('path');
+
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
