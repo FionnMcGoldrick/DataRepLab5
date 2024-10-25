@@ -56,3 +56,6 @@ const path = require('path');
 app.get('/index', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+//Server static assets
+app.use(express.static('public'));
