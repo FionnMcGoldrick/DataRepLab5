@@ -17,9 +17,9 @@ app.use((err, req, res, next) => {
 });
 
 //Route with URL Parameters
-app.get('/hello/:name/:surname', (req, res) => {
+/*app.get('/hello/:name/:surname', (req, res) => {
     res.send('Hello ' + req.params.name + " " + req.params.surname);
-});
+}); */
 
 //get API Movies
 app.get('/api/movies', (req, res) => {
@@ -59,3 +59,10 @@ app.get('/index', (req, res) => {
 
 //Server static assets
 app.use(express.static('public'));
+
+//Get Request
+app.get('/name', (req, res) => {
+    const firstname = req.query.firstname;
+    const lastname = req.query.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
+});
